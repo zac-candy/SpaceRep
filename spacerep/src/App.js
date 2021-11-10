@@ -16,8 +16,7 @@ const App = () => {
     event.preventDefault()
     const topicOb = {
       name: newTopic,
-      curDate: new Date().toISOString(),
-      reps: [this.curDate, this.curDate + 1, this.curDate + 7, this.curDate + 30, this.curDate + 90]
+      curDate: new Date()
     }
 
     setTopics(topics.concat(topicOb))
@@ -40,9 +39,7 @@ const App = () => {
 
       </ul>
       <h2>Topics to revise today</h2>
-      {topics.m()}
       <ul>
-
       </ul>
      
     </div>
