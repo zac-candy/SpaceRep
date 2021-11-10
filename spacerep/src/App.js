@@ -14,16 +14,19 @@ const App = () => {
 
   const addTopic = (event)=> {
     event.preventDefault()
+    const cd = new Date()
     const topicOb = {
+      id : 1,
       name: newTopic,
-      curDate: new Date()
+      reps : [cd, cd.setDate(cd.getDate() + 1),cd.setDate(cd.getDate() + 7),
+        cd.setDate(cd.getDate() + 30),cd.setDate(cd.getDate() + 90)]
     }
 
     setTopics(topics.concat(topicOb))
   }
+const nd = new Date()
 
 
- 
 
     return (
     <div>
@@ -38,8 +41,9 @@ const App = () => {
 
 
       </ul>
-      <h2>Topics to revise today</h2>
+      <h2>Topics entered</h2>
       <ul>
+      {topics.map(topic => <p>{topic.name}</p>)}
       </ul>
      
     </div>
