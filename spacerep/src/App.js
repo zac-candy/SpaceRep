@@ -37,13 +37,14 @@ const App = () => {
     const rep4 = new Date(example.setDate(example.getDate() + 90))
   
     return (
-      <ul>
+        <ul>
         <li>{cur.toDateString()}</li>
         <li>{rep1.toDateString()}</li>
         <li>{rep2.toDateString()}</li>
         <li>{rep3.toDateString()}</li>
         <li>{rep4.toDateString()}</li>
       </ul>
+      
     )
   }
 
@@ -65,8 +66,9 @@ const App = () => {
       </div>
       </div>
       </ul>
-      <div class = "schedule">
       <h2>SCHEDULE</h2>
+      <div class = "schedule">
+      
       <ul>
       {topics.map(topic => <div id = "output">
       <p><b><i>{topic.name}</i></b> has to be revised on the following days</p>
