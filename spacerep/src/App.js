@@ -18,13 +18,23 @@ const App = () => {
     const topicOb = {
       id : 1,
       name: newTopic,
-      reps : [cd, cd.setDate(cd.getDate() + 1),cd.setDate(cd.getDate() + 7),
-        cd.setDate(cd.getDate() + 30),cd.setDate(cd.getDate() + 90)]
+      curd : cd
     }
 
     setTopics(topics.concat(topicOb))
   }
-const nd = new Date()
+
+  const GetDates = ({curDate}) => {
+
+    const rep1 = curDate.setDate(curDate.getDate() + 1)
+
+
+    return (
+      <ul>
+        <li>{rep1.toDateString()}</li>
+      </ul>
+    )
+  }
 
 
 
@@ -41,9 +51,12 @@ const nd = new Date()
 
 
       </ul>
-      <h2>Topics entered</h2>
+      <h2>SCHEDULE</h2>
       <ul>
-      {topics.map(topic => <p>{topic.name}</p>)}
+      {topics.map(topic => <div>
+      <p><b><i>{topic.name}</i></b> has to be revised on the following days</p>
+      <GetDates curDate = {topic.curd} />
+      </div>) }
       </ul>
      
     </div>
