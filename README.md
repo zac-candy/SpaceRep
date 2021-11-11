@@ -1,2 +1,2 @@
 # SpaceRep
-A spaced repetition software
+A simple task scheduling application.
