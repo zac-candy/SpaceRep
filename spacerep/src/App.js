@@ -50,25 +50,32 @@ const App = () => {
 
 
     return (
-    <div>
-      <h1>SpaceRep</h1>
+    <div class = "container" >
+      <div>
+      <div class = "title"><h1>SpaceRep</h1></div>
       <ul>
-      <h2>Enter the Topic</h2>
+      <div class = "form">
+     
+      <div class = "box">
+      <div class = "topic"><h2>Enter the Topic</h2></div>
       <form  onSubmit = {addTopic}>
-        
         <p><input value  = {newTopic} onChange = {handleTopicChange}/></p>
-        <p><button type = "submit" >Submit</button></p>
+        <p class = "button"><button type = "submit" >Submit</button></p>
       </form>
-
-
+      </div>
+      </div>
       </ul>
+      <div class = "schedule">
       <h2>SCHEDULE</h2>
       <ul>
-      {topics.map(topic => <div>
+      {topics.map(topic => <div id = "output">
       <p><b><i>{topic.name}</i></b> has to be revised on the following days</p>
       <GetDates curDate = {topic.curd} />
       </div>) }
       </ul>
+      </div>
+              
+      </div>
      
     </div>
   )
